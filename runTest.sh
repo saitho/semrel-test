@@ -1,5 +1,7 @@
 #!/bin/bash
 
+pnpm i
+
 # Simulate release
 (echo 'test2' > a.txt)
 git add .
