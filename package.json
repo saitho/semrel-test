@@ -4,7 +4,6 @@
   "main": "index.js",
   "release": {
     "ci": false,
-    "branches": ["refs/pull/*/merge"],
     "plugins": [
       "@semantic-release/commit-analyzer",
       ["@saithodev/semantic-release-backmerge", {"message": "Testmessage"}]
