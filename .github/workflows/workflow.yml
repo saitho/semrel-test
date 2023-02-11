@@ -21,4 +21,4 @@ jobs:
         run: (cd node_modules/@saithodev/semantic-release-backmerge && pnpm i && pnpm build)
       - run: pnpx semantic-release
         env:
-          GH_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
