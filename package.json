@@ -6,7 +6,7 @@
     "ci": false,
     "plugins": [
       "@semantic-release/commit-analyzer",
-      ["@saithodev/semantic-release-backmerge", {"message": "Testmessage"}]
+      ["@saithodev/semantic-release-backmerge", {"message": "Testmessage", "branches": ["develop"]}]
     ]
   },
   "scripts": {
