@@ -23,6 +23,4 @@ jobs:
         run: (cd node_modules/@saithodev/semantic-release-backmerge && pnpm i && pnpm build)
       - run: pnpx semantic-release
         env:
-          # Read access to metadata
-          # Read and Write access to code
           GH_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
