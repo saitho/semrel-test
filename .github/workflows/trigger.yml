@@ -1,0 +1,25 @@
+name: Mixed inputs
+
+on:
+  workflow_dispatch:
+    inputs:
+      githubRepo:
+        description: 'GitHub Repo of semantic-release-backmerge to use'
+        default: 'saitho/semantic-release-backmerge'
+        type: string
+      repoBranch:
+        description: 'Branch to use'
+        required: true
+        type: string
+      semrelVersion:
+        description: 'version of semantic-release to use'
+        default: '^20.0.0'
+        type: string
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Send greeting
+      run: echo "${{ github.event.inputs.githubRepo }}#${{ github.event.inputs.repoBranch }} -> ${{ github.event.inputs.semrelVersion }}"
