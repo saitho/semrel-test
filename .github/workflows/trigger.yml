@@ -31,4 +31,5 @@ jobs:
     - name: Commit & Push changes
       uses: actions-js/push@master
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        # scoped token with repo write access
+        github_token: ${{ secrets.GH_ACCESS_TOKEN }}
