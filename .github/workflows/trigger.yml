@@ -22,6 +22,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+      with:
+        ssh-key: "${{ secrets.COMMIT_KEY }}"
     - name: Update @saithodev/semantic-release-backmerge dependency
       run: echo "`jq '.dependencies["@saithodev/semantic-release-backmerge"]="${{ github.event.inputs.githubRepo }}#${{ github.event.inputs.repoBranch }}"' package.json`" > package.json
     - name: Update semantic-release dependency
@@ -34,4 +36,4 @@ jobs:
       uses: actions-js/push@master
       with:
         # scoped token with repo write access
-        github_token: ${{ secrets.GH_ACCESS_TOKEN }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
