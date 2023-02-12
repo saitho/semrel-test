@@ -4,6 +4,7 @@
   "main": "index.js",
   "release": {
     "ci": false,
+    "branches": ["main"],
     "plugins": [
       "@semantic-release/commit-analyzer",
       [
@@ -13,7 +14,7 @@
           "backmergeBranches": [
             "develop",
             {
-              "from": "master",
+              "from": "main",
               "to": "another-branch"
             }
           ]
