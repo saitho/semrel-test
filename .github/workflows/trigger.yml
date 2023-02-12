@@ -1,11 +1,11 @@
-name: Mixed inputs
+name: Test semantic-release-backmerge branch with semantic-release
 
 on:
   workflow_dispatch:
     inputs:
       githubRepo:
-        description: 'GitHub Repo of semantic-release-backmerge to use'
-        default: 'saitho/semantic-release-backmerge'
+        description: 'Repo of semantic-release-backmerge to use'
+        default: 'github:saitho/semantic-release-backmerge'
         type: string
       repoBranch:
         description: 'Branch to use'
@@ -21,5 +21,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Send greeting
-      run: echo "${{ github.event.inputs.githubRepo }}#${{ github.event.inputs.repoBranch }} -> ${{ github.event.inputs.semrelVersion }}"
+    - uses: actions/checkout@v3
+    - name: Update @saithodev/semantic-release-backmerge dependency
+      run: echo "`jq '.dependencies["@saithodev/semantic-release-backmerge"]="${{ github.event.inputs.githubRepo }}#${{ github.event.inputs.repoBranch }}"' package.json`" > package.json
+    - name: Update semantic-release/semantic-release dependency
+      run: echo "`jq '.dependencies["semantic-release/semantic-release"]="${{ github.event.inputs.semrelVersion }}"' package.json`" > package.json
+    - name: Read package.json
+      run: cat package.json
