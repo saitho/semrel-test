@@ -37,4 +37,4 @@ jobs:
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-    - run: "git commit -am 'feat: trigger feature release' && git push"
+    - run: "git commit -am 'feat: ${{ github.event.inputs.githubRepo }}#${{ github.event.inputs.repoBranch }} with semantic-release ${{ github.event.inputs.semrelVersion }}' && git push"
