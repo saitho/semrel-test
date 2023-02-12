@@ -28,6 +28,8 @@ jobs:
       run: echo "`jq '.dependencies["semantic-release"]="${{ github.event.inputs.semrelVersion }}"' package.json`" > package.json
     - name: Read package.json
       run: cat package.json
+    - name: Update timestamp to commit if no changes in JSON file
+      run: echo $(date +%F_%T) > 'a.txt'
     - name: Commit & Push changes
       uses: actions-js/push@master
       with:
