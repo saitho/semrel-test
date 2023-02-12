@@ -30,8 +30,8 @@
     "url": "https://github.com/saitho/semrel-test.git"
   },
   "dependencies": {
-    "@saithodev/semantic-release-backmerge": "github:saitho/semantic-release-backmerge#bugfix/semantic-release-v20-compatibility",
-    "semantic-release": "^20.0.0"
+    "@saithodev/semantic-release-backmerge": "github:saitho/semantic-release-backmerge#chore/rename-branches",
+    "semantic-release": "^19.0.0"
   },
   "config": {
     "commitizen": {
