@@ -24,7 +24,11 @@ jobs:
     - uses: actions/checkout@v3
     - name: Update @saithodev/semantic-release-backmerge dependency
       run: echo "`jq '.dependencies["@saithodev/semantic-release-backmerge"]="${{ github.event.inputs.githubRepo }}#${{ github.event.inputs.repoBranch }}"' package.json`" > package.json
-    - name: Update semantic-release/semantic-release dependency
-      run: echo "`jq '.dependencies["semantic-release/semantic-release"]="${{ github.event.inputs.semrelVersion }}"' package.json`" > package.json
+    - name: Update semantic-release dependency
+      run: echo "`jq '.dependencies["semantic-release"]="${{ github.event.inputs.semrelVersion }}"' package.json`" > package.json
     - name: Read package.json
       run: cat package.json
+    - name: Commit & Push changes
+      uses: actions-js/push@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
