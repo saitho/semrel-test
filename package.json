@@ -35,7 +35,7 @@
     "url": "https://github.com/saitho/semrel-test.git"
   },
   "dependencies": {
-    "@saithodev/semantic-release-backmerge": "github:saitho/semantic-release-backmerge#master",
+    "@saithodev/semantic-release-backmerge": "github:saitho/semantic-release-backmerge#bugfix/ignore_empty_stash",
     "semantic-release": "^22.0.0"
   },
   "config": {
