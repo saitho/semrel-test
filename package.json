@@ -13,6 +13,8 @@
         "@saithodev/semantic-release-backmerge",
         {
           "message": "Testmessage",
+          "clearWorkspace": true,
+          "restoreWorkspace": true,
           "backmergeBranches": [
             "develop",
             {
