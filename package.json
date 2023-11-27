@@ -35,8 +35,8 @@
     "url": "https://github.com/saitho/semrel-test.git"
   },
   "dependencies": {
-    "@saithodev/semantic-release-backmerge": "github:evenius/semantic-release-backmerge#semantic_esm_support",
-    "semantic-release": "^22.0.8"
+    "@saithodev/semantic-release-backmerge": "github:saitho/semantic-release-backmerge#master",
+    "semantic-release": "^22.0.0"
   },
   "config": {
     "commitizen": {
